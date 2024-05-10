@@ -1,0 +1,16 @@
+@use "../../styles/variables.scss";
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 4.5rem 0 5rem 0;
+
+  background-color: variables.$gray-700;
+
+  img {
+    max-width: 7.875rem;
+    width: 100%;
+    height: auto;
+  }
+}

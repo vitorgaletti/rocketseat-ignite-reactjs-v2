@@ -1,0 +1,214 @@
+@use "../../styles/variables.scss";
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.tasks__header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tasks__created {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+
+  & > p {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: variables.$blue;
+  }
+
+  & > span {
+    padding: 0.125rem 0.5rem;
+    border-radius: 50%;
+    background-color: variables.$gray-400;
+
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    color: variables.$gray-200;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-align: center;
+  }
+}
+
+.tasks__completed {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+
+  & > p {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: variables.$purple;
+  }
+
+  & > span {
+    padding: 0.125rem 0.5rem;
+    border-radius: 1rem;
+    background-color: variables.$gray-400;
+
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    color: variables.$gray-200;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-align: center;
+  }
+}
+
+.content {
+  width: 46rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.content__notask {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  border-top: 1px solid variables.$gray-400;
+  padding: 4rem 0;
+  color: variables.$gray-300;
+  font-size: 1rem;
+  line-height: 1.4;
+
+  & > svg {
+    max-width: 3.5rem;
+    width: 100%;
+    height: auto;
+  }
+
+  p > strong {
+    display: block;
+    font-weight: 700;
+  }
+}
+
+.task__card {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background-color: variables.$gray-500;
+  border: 1px solid variables.$gray-400;
+  border-radius: 0.5rem;
+}
+
+.button__delete {
+  background-color: transparent;
+  border: none;
+  & > svg {
+    max-width: 1.5rem;
+    width: 100%;
+    height: auto;
+    color: variables.$gray-300;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      color: variables.$danger;
+      transform: scale(1.03);
+    }
+  }
+}
+
+.task_text {
+  color: variables.$gray-100;
+  font-size: 0.875rem;
+  line-height: 1.4;
+
+  &.checked {
+    text-decoration: line-through;
+    color: variables.$gray-300;
+  }
+}
+
+.task__check {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid variables.$blue;
+  border-radius: 100%;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    background-color: variables.$purple-dark;
+    border: 2px solid variables.$purple-dark;
+  }
+
+  &.checked {
+    border: 2px solid variables.$purple-dark;
+    background-color: variables.$purple-dark;
+
+    & > svg {
+      color: variables.$gray-100;
+    }
+  }
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  position: relative;
+  top: -1.687rem;
+
+  & > input {
+    width: 100%;
+    padding: 1rem;
+    background-color: variables.$gray-500;
+    color: variables.$gray-100;
+    border: 1px solid variables.$gray-700;
+    border-radius: 0.5rem;
+    text-align: start;
+    font-size: 1rem;
+  }
+
+  & > button {
+    padding: 1rem;
+    background-color: variables.$blue-dark;
+    border-radius: 0.5rem;
+    border: 0;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: variables.$gray-100;
+    font-weight: 700;
+    font-size: 0.875rem;
+    line-height: 1.4;
+
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    &:hover {
+      background-color: variables.$blue;
+      transform: scale(1.03);
+    }
+
+    svg {
+      width: 1rem;
+      height: 1rem;
+      color: variables.$gray-100;
+    }
+  }
+}
